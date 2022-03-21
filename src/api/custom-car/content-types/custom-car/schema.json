@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "custom_cars",
+  "info": {
+    "singularName": "custom-car",
+    "pluralName": "custom-cars",
+    "displayName": "Custom_car",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "engine": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::engine.engine"
+    },
+    "transmission": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::transmission.transmission"
+    },
+    "car": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::car.car"
+    },
+    "pack": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::pack.pack"
+    },
+    "car_color": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::car-color.car-color"
+    },
+    "sale": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sale.sale",
+      "mappedBy": "custom_car"
+    }
+  }
+}

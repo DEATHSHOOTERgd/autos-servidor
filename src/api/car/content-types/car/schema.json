@@ -1,0 +1,72 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cars",
+  "info": {
+    "singularName": "car",
+    "pluralName": "cars",
+    "displayName": "Car",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "default_image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "features": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::feature.feature",
+      "mappedBy": "car"
+    },
+    "years": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::year.year"
+    },
+    "engines": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::engine.engine",
+      "mappedBy": "car"
+    },
+    "transmissions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::transmission.transmission",
+      "mappedBy": "car"
+    },
+    "packs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pack.pack",
+      "mappedBy": "car"
+    },
+    "car_type": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::car-type.car-type"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "car_colors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::car-color.car-color",
+      "mappedBy": "car"
+    }
+  }
+}

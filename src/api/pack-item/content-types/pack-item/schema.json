@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pack_items",
+  "info": {
+    "singularName": "pack-item",
+    "pluralName": "pack-items",
+    "displayName": "Pack_item"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "pack": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::pack.pack",
+      "inversedBy": "pack_items"
+    }
+  }
+}
