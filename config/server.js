@@ -5,3 +5,10 @@ module.exports = ({ env }) => ({
     keys: env.array('APP_KEYS'),
   },
 });
+module.exports = ({ env }) => ({
+  url: env("MY_HEROKU_URL"),
+  proxy: true,
+  app: {
+      keys: env.array("APP_KEYS", ["jamservcar1", "jamservcar13"]),
+  },
+});
